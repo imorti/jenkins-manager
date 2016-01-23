@@ -24,6 +24,10 @@ ADD docker-wrapper.sh /usr/local/bin/docker-wrapper
 ADD https://get.docker.io/builds/Linux/x86_64/docker-latest /usr/local/bin/docker
 RUN chmod +x /usr/local/bin/docker
 
+# Install Docker Compose
+ADD https://github.com/docker/compose/releases/download/1.5.2/docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
+RUN chmod +x /usr/local/bin/docker-compose
+
 # for installing docker related files first
 RUN echo deb http://archive.ubuntu.com/ubuntu precise universe > /etc/apt/sources.list.d/universe.list
 # apparmor is required to run docker server within docker container
